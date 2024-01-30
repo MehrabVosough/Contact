@@ -1,6 +1,6 @@
 import ContactItem from "./ContactItem";
 
-function contactList({ contact }) {
+function contactList({ contact,  setContacts }) {
 	console.log(contact);
 	return (
 		<div>
@@ -8,7 +8,7 @@ function contactList({ contact }) {
 			{contact.length ? (
 				<ul>
 					{contact.map((contact) => (
-						<ContactItem key={contact.id} data={contact}/>
+						<ContactItem key={contact.id} data={contact} deleteItem={setContacts}/>
 					))}
 				</ul>
 			) : (
